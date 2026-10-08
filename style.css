@@ -1,67 +1,194 @@
+/* General Reset & Layout */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
+    background-color: #f8f5ff; /* Soft lavender background */
+    color: #3b334a; /* Dark slate-purple text for maximum legibility */
     line-height: 1.6;
-    color: #333;
-    padding: 20px;
-}
-
-header {
+    padding: 40px 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
+    justify-content: center;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-section {
-    margin: 40px 0;
-}
-
-.project-card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-
-form {
+.container {
+    width: 100%;
+    max-width: 850px;
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    gap: 24px;
 }
 
-form input, form textarea {
+/* Header & Profile Picture */
+.profile-header {
+    text-align: center;
     margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
-form button {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #8b5cf6; /* Vibrant purple border */
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.25);
+    margin-bottom: 15px;
+}
+
+.profile-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4c1d95; /* Deep rich purple heading */
+    margin-bottom: 5px;
+}
+
+.profile-header p {
+    color: #6b7280;
+    font-size: 1.05rem;
+}
+
+/* Card Boxes */
+.card {
+    background-color: #ffffff; /* Clean white card backgrounds */
+    border: 1px solid #e9d5ff; /* Light purple border */
+    border-radius: 12px;
+    padding: 24px 28px;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.08);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    border-color: #8b5cf6;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.2);
+}
+
+.card h2 {
+    color: #7c3aed; /* Royal purple for section headings */
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.card p {
+    color: #3b334a;
+    font-size: 0.95rem;
+}
+
+/* Custom Bullet Lists */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    color: #3b334a;
+    font-size: 0.95rem;
+}
+
+ul li::before {
+    content: "•";
+    color: #8b5cf6;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+ul li:last-child {
+    margin-bottom: 0;
+}
+
+ul li strong {
+    color: #1e1b4b;
+}
+
+/* Certificate Hyperlinks */
+.cert-link {
+    color: #6d28d9;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-left: 6px;
+    transition: color 0.2s ease;
+}
+
+.cert-link:hover {
+    color: #4c1d95;
+    text-decoration: underline;
+}
+
+/* Skills Section Styling */
+.skill-group {
+    margin-bottom: 12px;
+}
+
+.skill-group:last-child {
+    margin-bottom: 0;
+}
+
+.skill-group strong {
+    color: #1e1b4b;
+}
+
+/* Projects Inner Card Styling */
+.project-item {
+    background-color: #faf5ff; /* Subtle lavender-tinted inner container */
+    border: 1px solid #f3e8ff;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 14px;
+}
+
+.project-item:last-child {
+    margin-bottom: 0;
+}
+
+.project-item h3 {
+    color: #6d28d9;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+}
+
+.project-item p {
+    font-size: 0.9rem;
+    color: #5b5266;
+    margin-bottom: 10px;
+}
+
+.btn-github {
+    display: inline-block;
+    background-color: #7c3aed;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-github:hover {
+    background-color: #6d28d9;
+}
+
+/* Contact Links Styling */
+.contact-subtext {
+    margin-bottom: 12px;
+    color: #5b5266;
+}
+
+.contact-list li a {
+    color: #7c3aed;
+    text-decoration: none;
+}
+
+.contact-list li a:hover {
+    text-decoration: underline;
 }
